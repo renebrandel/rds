@@ -1,0 +1,8 @@
+type Meal {
+  id: Int!
+  name: String!
+}
+
+type Query {
+  listMeals: [Meal] @sql(statement: "SELECT * FROM Meals") @auth(rules: [{ allow: public }])
+}
